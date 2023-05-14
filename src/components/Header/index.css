@@ -1,0 +1,27 @@
+.header-container {
+  background-color: #dbeafe;
+  height: 90px;
+  width: 100vw;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-logo {
+  height: 50px;
+  width: 80px;
+  margin-right: 10px;
+}
+
+.logo-name {
+  font-family: 'Bree Serif';
+  color: #0f172a;
+  font-size: 28px;
+  margin-top: 6px;
+}

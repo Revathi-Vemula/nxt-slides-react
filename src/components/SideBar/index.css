@@ -1,0 +1,17 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  height: 456px;
+  overflow: scroll;
+  padding: 5px;
+  position: fixed;
+  left: 0;
+}
+
+.slides-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  list-style-type: none;
+}
