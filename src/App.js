@@ -51,7 +51,11 @@ class App extends Component {
   }
 
   changeSlide = id => {
-    const {activeSlide} = this.state
+    const {activeSlide, slidesList} = this.state
+    const clickedSlideIndex = slidesList.findIndex(
+      eachSlide => eachSlide.id === id,
+    )
+    this.setState({activeSlide: clickedSlideIndex})
   }
 
   addSlide = () => {
