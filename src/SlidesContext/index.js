@@ -41,6 +41,8 @@ const initialSlidesList = [
 const SlidesContext = React.createContext({
   activeSlide: 0,
   slidesList: initialSlidesList,
+  updateNewHeading: () => {},
+  updateNewDescription: () => {},
   changeSlide: () => {},
   addSlide: () => {},
 })

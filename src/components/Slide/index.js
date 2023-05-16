@@ -8,7 +8,7 @@ const Slide = props => {
   return (
     <SlidesContext.Consumer>
       {value => {
-        const {activeSlide, changeSlide} = value
+        const {changeSlide} = value
 
         const activeSlideClass = `slide-item ${
           isActiveSlide ? 'active-slide' : ''

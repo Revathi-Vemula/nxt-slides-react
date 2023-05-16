@@ -4,6 +4,8 @@ import SlidesContext from './SlidesContext'
 import Home from './components/Home'
 import './App.css'
 
+// Published at https://nxtslidesrev.ccbp.tech
+
 // This is the list used in the application. You can move them to any component needed.
 const initialSlidesList = [
   {
@@ -51,7 +53,7 @@ class App extends Component {
   }
 
   changeSlide = id => {
-    const {activeSlide, slidesList} = this.state
+    const {slidesList} = this.state
     const clickedSlideIndex = slidesList.findIndex(
       eachSlide => eachSlide.id === id,
     )
@@ -74,6 +76,24 @@ class App extends Component {
     }))
   }
 
+  updateNewHeading = newHeading => {
+    const {activeSlide, slidesList} = this.state
+    const currentSlide = slidesList[activeSlide]
+    const updatedSlide = {...currentSlide, heading: newHeading}
+    slidesList.splice(activeSlide, 1, updatedSlide)
+
+    this.setState({slidesList})
+  }
+
+  updateNewDescription = newDescription => {
+    const {activeSlide, slidesList} = this.state
+    const currentSlide = slidesList[activeSlide]
+    const updatedSlide = {...currentSlide, description: newDescription}
+    slidesList.splice(activeSlide, 1, updatedSlide)
+
+    this.setState({slidesList})
+  }
+
   render() {
     const {activeSlide, slidesList} = this.state
 
@@ -84,6 +104,8 @@ class App extends Component {
           slidesList,
           changeSlide: this.changeSlide,
           addSlide: this.addSlide,
+          updateNewHeading: this.updateNewHeading,
+          updateNewDescription: this.updateNewDescription,
         }}
       >
         <Home />
